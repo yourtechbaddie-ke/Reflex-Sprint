@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reflex — Delivery Control</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div><span class="eyebrow">REFLEX</span><h1>Delivery Control</h1></div><div class="role"><label for="role">View as</label><select id="role"><option>Retailer</option><option>Dispatcher</option><option>Rider</option></select></div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">SMALL RETAILER DELIVERY OPERATIONS</p><h2>Every delivery has an owner, a status and a trail.</h2><p>Replace scattered WhatsApp updates with one shared delivery record.</p></div><div class="sync"><span id="syncDot"></span><span id="syncText">Synced locally</span></div></section>
+<section id="retailerPanel" class="panel"><div class="panel-head"><div><p class="eyebrow">RETAILER</p><h3>New delivery request</h3></div></div><form id="requestForm" class="form-grid"><input id="customer" placeholder="Customer name" required><input id="phone" placeholder="Phone" required><input id="address" placeholder="Delivery address" required><input id="item" placeholder="Item description" required><button type="submit">Create request</button></form></section>
+<section class="dashboard"><div class="stats"><div><span>Open</span><strong id="openCount">0</strong></div><div><span>Assigned</span><strong id="assignedCount">0</strong></div><div><span>Delivered</span><strong id="deliveredCount">0</strong></div></div><div class="toolbar"><h3>Delivery board</h3><div><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="Open">Open</button><button class="filter" data-filter="Assigned">Assigned</button><button class="filter" data-filter="Picked Up">Picked Up</button><button class="filter" data-filter="Delivered">Delivered</button></div></div><div id="cards" class="cards"></div></section>
+<section id="scanPanel" class="panel scan"><div><p class="eyebrow">RIDER</p><h3>Order confirmation</h3><p>Scan a delivery code when the browser supports BarcodeDetector, or enter the code manually.</p></div><div class="scan-row"><input id="scanCode" placeholder="e.g. RX-1001"><button id="confirmScan">Confirm delivery</button></div><video id="camera" autoplay playsinline hidden></video><p id="scanMessage" class="muted"></p></section>
+</main><footer>Reflex • Readiness Sprint frozen build • Demo data is stored in your browser.</footer>
+<script src="app.js"></script>
+</body></html>
