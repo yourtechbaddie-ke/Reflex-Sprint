@@ -2,6 +2,12 @@
 
 Reflex is a delivery-coordination MVP for small Kenyan retailers. It replaces WhatsApp/phone-based coordination with a simple workflow: **Retailer creates request → Dispatcher assigns rider → Rider updates status → Retailer sees progress and proof of delivery.**
 
+## 🚀 Live MVP
+
+**[Open the Reflex MVP](https://reflex-sprint-mvp.hatchable.site)**
+
+The live prototype demonstrates the core delivery workflow, including request creation, rider assignment, status progression, delivery confirmation, filtering, and operational visibility.
+
 This repository contains the frozen case-study build, architecture decisions, trade-off log, executive narrative, demo script, timing log, and defense preparation required by the Readiness Sprint assignment.
 
 ## Case study scope
