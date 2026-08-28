@@ -2,41 +2,57 @@
 
 Reflex is a delivery-coordination MVP for small Kenyan retailers. It replaces WhatsApp/phone-based coordination with a simple workflow: **Retailer creates request → Dispatcher assigns rider → Rider updates status → Retailer sees progress and proof of delivery.**
 
-## 🚀 Live MVP
+## 🚀 Live Prototype Links
 
-**[Open the Reflex MVP](https://reflex-sprint-mvp.hatchable.site)**
+### Reflex Control Room — Frontend / UX
+**https://reflex-control-room.hatchable.site/**
 
-The live prototype demonstrates the core delivery workflow, including request creation, rider assignment, status progression, delivery confirmation, filtering, and operational visibility.
+The Control Room is the dedicated frontend/UX prototype for the sprint. It demonstrates the operational dashboard, delivery metrics, request creation, search/filtering, rider assignment, status progression and delivery-code confirmation flow.
 
-This repository contains the frozen case-study build, architecture decisions, trade-off log, executive narrative, demo script, timing log, and defense preparation required by the Readiness Sprint assignment.
+### Reflex MVP
+**https://reflex-sprint-mvp.hatchable.site**
+
+The original frozen MVP remains available as the team's broader sprint artifact.
+
+## Frontend / UX
+
+The dedicated frontend implementation is in `Frontend/`:
+
+- `Frontend/index.html` — semantic Control Room interface structure.
+- `Frontend/styles.css` — responsive visual system and interaction states.
+- `Frontend/app.js` — frontend interactions and browser-local prototype state.
+- `Frontend/README.md` — frontend scope, local run instructions and ownership boundary.
+- `docs/frontend-ux.md` — UX principles, interface areas, accessibility notes and frozen-MVP vs production boundary.
+
+The frontend is intentionally separated from backend responsibilities. The frozen Control Room uses browser `localStorage` for demo persistence; it does **not** claim to provide production multi-user synchronization, secure persistence or server-side authorization.
 
 ## Case study scope
 - Retailer staff: customer name, phone, address, item description.
 - Dispatcher: open requests and rider assignment.
 - Rider: assigned deliveries and status updates: Assigned → Picked Up → Delivered.
 - Order confirmation: browser camera/barcode scan when supported, with manual fallback.
-- Real-time/sync behavior is represented in the MVP through a local event model; production synchronization is documented in `docs/architecture.md`.
+- Real-time/sync behavior is represented in the frozen prototype; production synchronization is documented in `docs/architecture.md`.
 
 ## Repository map
-- `index.html` — runnable single-page Reflex MVP.
-- `styles.css` — responsive interface styling.
-- `app.js` — request creation, assignment, status flow, filtering, persistence and scan fallback.
+- `index.html` / `styles.css` / `app.js` — original frozen single-page MVP.
+- `Frontend/` — dedicated Reflex Control Room frontend/UX implementation.
 - `docs/architecture.md` — production architecture, data model and failure handling.
-- `docs/trade-off-log.md` — five explicit trade-offs and acceptable-because decisions.
+- `docs/frontend-ux.md` — frontend UX decisions and ownership boundary.
+- `docs/trade-off-log.md` — explicit trade-offs and acceptable-because decisions.
 - `docs/executive-deck.md` — Problem → Solution → Architecture → Trade-offs → Roadmap narrative.
 - `docs/demo-script.md` — 10-minute demo/presentation script.
-- `docs/timing-log.md` — two dry-run timing records and revision notes.
+- `docs/timing-log.md` — dry-run timing evidence and revision notes.
 - `docs/cross-examination.md` — State → Context → Evidence defense bank.
 - `docs/requirements-traceability.md` — assignment requirement to repository evidence.
 
 ## Run locally
-No build toolchain is required for the frozen MVP. Open `index.html` in a modern browser. For camera scanning, serve the folder from localhost/HTTPS because browser camera APIs are security-restricted.
+For the original frozen MVP, open `index.html` in a modern browser. For the dedicated Control Room, open `Frontend/index.html`. No frontend build toolchain is required for either frozen prototype.
 
 ## Design decision
-The prototype intentionally uses vanilla HTML/CSS/JavaScript so the sprint artifact is immediately inspectable and dependency-light. The production target is a React/TypeScript client backed by Firebase Authentication, Firestore, Cloud Functions and Cloud Storage, with role-based access and offline-aware synchronization. That production choice is documented rather than pretending credentials/backend infrastructure exist in this assignment repository.
+The frozen sprint artifacts intentionally use dependency-light HTML/CSS/JavaScript so the work remains immediately inspectable. The production target is a React/TypeScript client backed by Firebase Authentication, Firestore, Cloud Functions and Cloud Storage, with role-based access and offline-aware synchronization. Production architecture is documented rather than pretending credentials/backend infrastructure exist in this assignment repository.
 
 ## Sprint deliverables
-The assignment asks for a frozen build/design, executive deck, one-page trade-off log, demo script, timing evidence from at least two dry runs, and preparation for architecture, trade-off, edge-case and candor questions. Those artifacts are included here.
+The repository contains the frozen build/design, executive narrative, trade-off log, demo script, timing evidence, requirements traceability, cross-examination preparation and the dedicated Frontend/UX Control Room.
 
 ## Source of assignment requirements
 See the uploaded **Reflex, The Readiness Sprint** brief. It defines the case study, five-day schedule, deliverables and scoring expectations.
