@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Reflex Control Room — delivery coordination frontend prototype.">
+  <title>Reflex — Control Room</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Reflex Control Room home"><span class="brand-mark">R</span><span><strong>REFLEX</strong><small>CONTROL ROOM</small></span></a>
+  <label class="role-switch">View as <select id="role"><option>Retailer</option><option>Dispatcher</option><option>Rider</option></select></label>
+</header>
+<main id="top">
+  <section class="hero">
+    <div><p class="eyebrow">DELIVERY OPERATIONS</p><h1>Every delivery has an owner, a status and a trail.</h1><p>One shared operational view for requests, rider assignment, progress and confirmation.</p></div>
+    <div class="sync" aria-live="polite"><span id="syncDot"></span><span id="syncText">Local prototype</span></div>
+  </section>
+
+  <section id="retailerPanel" class="panel">
+    <div class="section-head"><div><p class="eyebrow">RETAILER</p><h2>New delivery request</h2></div><span class="step">01 / REQUEST</span></div>
+    <form id="requestForm" class="form-grid">
+      <label>Customer name<input id="customer" autocomplete="name" required></label>
+      <label>Phone<input id="phone" autocomplete="tel" required></label>
+      <label>Delivery address<input id="address" required></label>
+      <label>Item description<input id="item" required></label>
+      <button class="primary" type="submit">Create request</button>
+    </form>
+  </section>
+
+  <section id="dashboard" class="dashboard">
+    <div class="stats" aria-label="Delivery metrics">
+      <article><span>Open</span><strong id="openCount">0</strong></article>
+      <article><span>Assigned</span><strong id="assignedCount">0</strong></article>
+      <article><span>Picked up</span><strong id="pickedCount">0</strong></article>
+      <article><span>Delivered</span><strong id="deliveredCount">0</strong></article>
+    </div>
+    <div class="section-head board-head"><div><p class="eyebrow">OPERATIONS</p><h2>Delivery board</h2></div><div class="controls"><input id="search" placeholder="Search delivery…" aria-label="Search deliveries"><div id="filters" class="filters"></div></div></div>
+    <div id="cards" class="cards" aria-live="polite"></div>
+  </section>
+
+  <section id="riderPanel" class="panel rider-panel" hidden>
+    <div class="section-head"><div><p class="eyebrow">RIDER</p><h2>Order confirmation</h2></div><span class="step">04 / PROOF</span></div>
+    <p>Enter a delivery code as the reliable fallback when camera scanning is unavailable.</p>
+    <div class="confirm-row"><input id="scanCode" placeholder="e.g. RX-1001"><button class="primary" id="confirmScan">Confirm delivery</button></div>
+    <p id="scanMessage" class="feedback" aria-live="polite"></p>
+  </section>
+</main>
+<footer>Reflex • Readiness Sprint frontend prototype • Browser-local demo state</footer>
+<script src="app.js"></script>
+</body>
+</html>
